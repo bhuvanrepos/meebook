@@ -25,6 +25,59 @@ const formatDialogueText = (text: string) => {
   return text;
 };
 
+// Helper to resolve custom beautiful colors for character labels
+const getSpeakerColor = (speakerName: string): string => {
+  if (!speakerName) return "text-[var(--foreground)]/80";
+  const name = speakerName.trim().toLowerCase();
+  
+  switch (name) {
+    case "bhairav":
+    case "bhairava":
+      return "text-[var(--accent)] font-semibold";
+    case "indu":
+      return "text-amber-500 font-semibold";
+    case "radha":
+      return "text-emerald-500 font-semibold";
+    case "kanna":
+      return "text-sky-500 font-semibold";
+    case "rudra":
+      return "text-red-500 font-semibold";
+    case "aadya":
+      return "text-fuchsia-500 font-semibold";
+    case "rajmouli":
+      return "text-indigo-400 font-semibold";
+    case "writer":
+      return "text-teal-500 font-semibold";
+    case "director":
+      return "text-violet-400 font-semibold";
+    case "cute girl":
+      return "text-pink-405 font-semibold";
+    default:
+      // Dynamically select a gorgeous, consistent color based on string hash for custom typed names
+      const colors = [
+        "text-rose-400 font-medium",
+        "text-orange-400 font-medium",
+        "text-amber-400 font-medium",
+        "text-lime-400 font-medium",
+        "text-emerald-400 font-medium",
+        "text-teal-400 font-medium",
+        "text-cyan-400 font-medium",
+        "text-sky-400 font-medium",
+        "text-indigo-400 font-medium",
+        "text-violet-400 font-medium",
+        "text-purple-400 font-medium",
+        "text-fuchsia-400 font-medium",
+        "text-pink-400 font-medium"
+      ];
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      const index = Math.abs(hash) % colors.length;
+      return colors[index];
+  }
+};
+
 // ==========================================
 // 1. STUNNING INLINE SVG GRAPHICS AS FALLBACKS
 // ==========================================
@@ -324,11 +377,7 @@ const SplitConversation: React.FC<SplitConversationProps> = ({
         className="w-[55%] h-full overflow-y-auto pl-4 pr-1 custom-scrollbar flex flex-col py-4 gap-7 touch-pan-y"
       >
         {page.dialogues && page.dialogues.map((dlg, idx) => {
-          const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
-          const isIndu = dlg.speaker.toLowerCase() === "indu";
-          let nameColor = "text-[var(--foreground)]/80";
-          if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
-          if (isIndu) nameColor = "text-amber-600 font-semibold";
+          const nameColor = getSpeakerColor(dlg.speaker);
 
           const rowImage = isStatic ? page.image : (dlg.image || page.image);
           const isActive = idx === activeIdx;
@@ -620,12 +669,7 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
         {page.type === "conversation" && (
           <div className="space-y-6 md:space-y-8 max-w-lg mx-auto w-full my-auto px-2">
             {page.dialogues && page.dialogues.map((dlg, idx) => {
-              const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
-              const isIndu = dlg.speaker.toLowerCase() === "indu";
-              
-              let nameColor = "text-[var(--foreground)]/80";
-              if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
-              if (isIndu) nameColor = "text-amber-650 font-semibold";
+              const nameColor = getSpeakerColor(dlg.speaker);
               const isActive = idx === activeIdx;
 
               return (
@@ -667,11 +711,7 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
               className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 py-2 select-text touch-pan-y"
             >
               {page.dialogues && page.dialogues.map((dlg, idx) => {
-                const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
-                const isIndu = dlg.speaker.toLowerCase() === "indu";
-                let nameColor = "text-[var(--foreground)]/80";
-                if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
-                if (isIndu) nameColor = "text-amber-600 font-semibold";
+                const nameColor = getSpeakerColor(dlg.speaker);
                 const isActive = idx === activeIdx;
 
                 return (
