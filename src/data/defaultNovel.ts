@@ -151,16 +151,16 @@ const generateChapters = (): ChapterData[] => {
           type: "split_conversation",
           audio: "night",
           title: "Late Night Crossroads",
-          image: "/images/keyboard_closeup.png",
+          image: "/images/call.png",
           dialogues: [
-            { speaker: "Bhairav", text: "Why do we always meet at the edge of the day?", image: "/images/keyboard_closeup.png" },
-            { speaker: "Indu", text: "Maybe because that's when we stop pretending to be busy.", image: "/images/keyboard_closeup.png" },
-            { speaker: "Bhairav", text: "Do you ever think about turning back?", image: "/images/coffeecup_rain.png" },
-            { speaker: "Indu", text: "I did. But the tracks only go forward.", image: "/images/coffeecup_rain.png" },
-            { speaker: "Bhairav", text: "Nenu endhuku ila feel avthunna...?", thought: true, image: "/images/metro_window.png" },
-            { speaker: "Bhairav", text: "Then let's see where they lead.", image: "/images/metro_window.png" },
-            { speaker: "Indu", text: "Even if they lead to nowhere?", image: "/images/coffeecup_rain.png" },
-            { speaker: "Bhairav", text: "There is no 'nowhere' when we are travelling together.", image: "/images/coffeecup_rain.png" }
+            { speaker: "Bhairav", text: "Why do we always meet at the edge of the day?", image: "/images/call.png" },
+            { speaker: "Indu", text: "Maybe because that's when we stop pretending to be busy.", image: "/images/indu.png" },
+            { speaker: "Bhairav", text: "Do you ever think about turning back?", image: "/images/speech.png" },
+            { speaker: "Indu", text: "I did. But the tracks only go forward.", image: "/images/indu.png" },
+            { speaker: "Bhairav", text: "Nenu endhuku ila feel avthunna...?", thought: true, image: "/images/speech.png" },
+            { speaker: "Bhairav", text: "Then let's see where they lead.", image: "/images/call.png" },
+            { speaker: "Indu", text: "Even if they lead to nowhere?", image: "/images/indu.png" },
+            { speaker: "Bhairav", text: "There is no 'nowhere' when we are travelling together.", image: "/images/speech.png" }
           ]
         },
         {
