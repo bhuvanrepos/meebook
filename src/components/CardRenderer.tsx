@@ -225,13 +225,19 @@ const CardImage: React.FC<{ src?: string; alt?: string; className?: string }> = 
 interface SplitConversationProps {
   page: PageData;
   setLightboxImage: (src: string | null) => void;
+  isStatic?: boolean;
 }
 
-const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightboxImage }) => {
+const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightboxImage, isStatic = false }) => {
   const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
+    if (isStatic) {
+      setActiveImage(page.image);
+      return;
+    }
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -257,12 +263,16 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
     rows.forEach((row) => observer.observe(row));
 
     // Initial setup
-    if (page.dialogues && page.dialogues.length > 0) {
-      const firstWithImg = page.dialogues.find(d => d.image);
-      if (firstWithImg && firstWithImg.image) {
-        setActiveImage(firstWithImg.image);
-      } else if (page.image) {
-        setActiveImage(page.image);
+    if (isStatic) {
+      setActiveImage(page.image);
+    } else {
+      if (page.dialogues && page.dialogues.length > 0) {
+        const firstWithImg = page.dialogues.find(d => d.image);
+        if (firstWithImg && firstWithImg.image) {
+          setActiveImage(firstWithImg.image);
+        } else if (page.image) {
+          setActiveImage(page.image);
+        }
       }
     }
 
@@ -312,7 +322,7 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
           if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
           if (isIndu) nameColor = "text-amber-600 font-semibold";
 
-          const rowImage = dlg.image || page.image;
+          const rowImage = isStatic ? page.image : (dlg.image || page.image);
 
           return (
             <div 
@@ -569,9 +579,16 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
         )}
 
         {/* SPLIT SCREEN SCROLL-SYNC CONVERSATION PAGE */}
-        {page.type === "split_conversation" && (
+        {(page.type === "split_conversation" || page.type === "split_conversation_multi") && (
           <div className="flex-1 w-full h-full overflow-hidden my-auto py-2">
-            <SplitConversation page={page} setLightboxImage={setLightboxImage} />
+            <SplitConversation page={page} setLightboxImage={setLightboxImage} isStatic={false} />
+          </div>
+        )}
+
+        {/* SPLIT SCREEN STATIC CONVERSATION PAGE */}
+        {page.type === "split_conversation_single" && (
+          <div className="flex-1 w-full h-full overflow-hidden my-auto py-2">
+            <SplitConversation page={page} setLightboxImage={setLightboxImage} isStatic={true} />
           </div>
         )}
 

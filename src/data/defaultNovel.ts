@@ -7,7 +7,7 @@ export interface DialogueLine {
 
 export interface PageData {
   id: string;
-  type: 'cover' | 'intro' | 'conversation' | 'long_conversation' | 'story' | 'single_image' | 'multi_image' | 'quote' | 'interval' | 'ending' | 'split_conversation';
+  type: 'cover' | 'intro' | 'conversation' | 'long_conversation' | 'story' | 'single_image' | 'multi_image' | 'quote' | 'interval' | 'ending' | 'split_conversation' | 'split_conversation_single' | 'split_conversation_multi';
   audio?: 'metro' | 'rain' | 'temple' | 'wind' | 'birds' | 'hospital' | 'keyboard' | 'night' | 'silence';
   audioVolume?: number;
   title?: string;
@@ -93,7 +93,7 @@ const generateChapters = (): ChapterData[] => {
         },
         {
           id: "p1-3",
-          type: "split_conversation",
+          type: "split_conversation_single",
           audio: "metro",
           image: "/images/metro_window.png",
           enableZoom: true,
@@ -150,7 +150,7 @@ const generateChapters = (): ChapterData[] => {
         },
         {
           id: "p1-9",
-          type: "split_conversation",
+          type: "split_conversation_multi",
           audio: "night",
           title: "Late Night Crossroads",
           image: "/images/call.png",

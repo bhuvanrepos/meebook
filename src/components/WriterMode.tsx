@@ -376,8 +376,14 @@ export const WriterMode: React.FC = () => {
               onChange={(e) => updatePageField("type", e.target.value)}
               className="bg-stone-800 border border-stone-700 text-stone-100 text-xs py-1 px-2.5 rounded"
             >
-              {["cover", "intro", "conversation", "long_conversation", "split_conversation", "story", "single_image", "multi_image", "quote", "interval", "ending"].map((t) => (
-                <option key={t} value={t}>{t.replace('_', ' ')}</option>
+              {["cover", "intro", "conversation", "long_conversation", "split_conversation_single", "split_conversation_multi", "story", "single_image", "multi_image", "quote", "interval", "ending"].map((t) => (
+                <option key={t} value={t}>
+                  {t === "split_conversation_single" 
+                    ? "split conversation (one image)" 
+                    : t === "split_conversation_multi" 
+                    ? "split conversation (multi images)" 
+                    : t.replace(/_/g, ' ')}
+                </option>
               ))}
             </select>
 
@@ -530,7 +536,7 @@ export const WriterMode: React.FC = () => {
             )}
 
             {/* C. CONVERSATIONS FIELDS */}
-            {(activePage.type === "conversation" || activePage.type === "long_conversation" || activePage.type === "split_conversation") && (
+            {(activePage.type === "conversation" || activePage.type === "long_conversation" || activePage.type === "split_conversation" || activePage.type === "split_conversation_single" || activePage.type === "split_conversation_multi") && (
               <div className="space-y-4">
                 {activePage.type === "long_conversation" && (
                   <div className="flex flex-col gap-1.5 mb-2">
@@ -545,7 +551,7 @@ export const WriterMode: React.FC = () => {
                   </div>
                 )}
 
-                {activePage.type === "split_conversation" && (
+                {(activePage.type === "split_conversation" || activePage.type === "split_conversation_single" || activePage.type === "split_conversation_multi") && (
                   <div className="space-y-3 p-3 bg-stone-900/40 rounded-lg border border-stone-800/80 mb-3">
                     <span className="text-[10px] uppercase font-bold text-stone-400 block mb-1">Page Settings</span>
                     <div className="flex flex-col gap-1">
@@ -647,7 +653,7 @@ export const WriterMode: React.FC = () => {
                             className="writer-input bg-stone-800 border-stone-700 text-white text-xs py-1"
                             placeholder={dlg.thought ? "Enter inner thoughts (will be bracketed italics)" : "Enter speech..."}
                           />
-                          {activePage.type === "split_conversation" && (
+                          {(activePage.type === "split_conversation" || activePage.type === "split_conversation_multi") && (
                             <div className="mt-2 flex flex-col gap-1">
                               <span className="text-[9px] uppercase font-bold text-stone-500 flex items-center gap-1">
                                 <ImageIcon size={10} /> Dialogue Illustration Image Path
