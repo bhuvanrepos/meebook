@@ -305,7 +305,7 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
 
             <div className="pt-2 animate-bounce">
               <span className="text-xs tracking-widest uppercase opacity-40 font-sans font-semibold flex items-center gap-1.5">
-                Swipe Left to Begin <ChevronRight size={14} />
+                Tap Right to Begin <ChevronRight size={14} />
               </span>
             </div>
           </div>
@@ -374,7 +374,7 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
 
             <div className="pt-4">
               <span className="text-xs tracking-widest uppercase opacity-40 font-sans font-semibold flex items-center gap-1.5">
-                Swipe Left to Read <ChevronRight size={14} />
+                Tap Right to Read <ChevronRight size={14} />
               </span>
             </div>
           </div>
@@ -536,7 +536,7 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
 
             <div className="pb-8">
               <span className="text-xs tracking-widest uppercase text-white/40 font-sans font-semibold flex items-center gap-1.5 animate-pulse">
-                Tap Next to Continue <ChevronRight size={14} />
+                Tap Right to Continue <ChevronRight size={14} />
               </span>
             </div>
           </div>

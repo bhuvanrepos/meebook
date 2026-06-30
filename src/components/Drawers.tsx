@@ -155,7 +155,7 @@ export const SettingsDrawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
 
               {/* Toggle Transitions */}
               <div className="flex justify-between items-center py-2">
-                <span className="text-sm font-sans font-semibold">Enable Page Swipe Animations</span>
+                <span className="text-sm font-sans font-semibold">Enable Page Flip Animations</span>
                 <button
                   onClick={() => updateSettings({ animate: !settings.animate })}
                   className={`w-12 h-6 rounded-full p-1 transition-colors duration-300 ${
