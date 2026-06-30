@@ -24,6 +24,30 @@ export const WriterMode: React.FC = () => {
   const { novelData, setNovelData, currentChapterIndex, currentPageIndex, goToPage, setIsWriterMode } = useNovel();
   const [selectedChIdx, setSelectedChIdx] = useState(currentChapterIndex);
   const [selectedPgIdx, setSelectedPgIdx] = useState(currentPageIndex);
+  const [isSaving, setIsSaving] = useState(false);
+
+  const saveNovelToDisk = async () => {
+    setIsSaving(true);
+    try {
+      const response = await fetch("/api/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ novelData }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        alert("🎉 Novel data successfully saved to local file 'src/data/novelData.json'!\n\nRefresh your page to view your edits.");
+      } else {
+        alert("❌ Failed to save to local file: " + (data.error || "Unknown error"));
+      }
+    } catch (err: any) {
+      alert("❌ Network/Server error: " + err.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const activeChapter = novelData.chapters[selectedChIdx] || novelData.chapters[0];
   const activePage = activeChapter?.pages[selectedPgIdx];
@@ -72,17 +96,22 @@ export const WriterMode: React.FC = () => {
   const createPage = (type: PageData['type']) => {
     updateNovelData((data) => {
       const pages = data.chapters[selectedChIdx].pages;
+      const isDlgType = type === "conversation" || 
+                        type === "long_conversation" || 
+                        type === "split_conversation" || 
+                        type === "split_conversation_single" || 
+                        type === "split_conversation_multi";
       const newPage: PageData = {
         id: `p-${Date.now()}`,
         type,
         audio: "silence",
         title: type === "cover" ? "MANDARA" : undefined,
         quote: type === "quote" || type === "interval" || type === "ending" ? "Write quote here..." : undefined,
-        dialogues: type === "conversation" || type === "long_conversation" ? [
+        dialogues: isDlgType ? [
           { speaker: "Bhairav", text: "Write first line here..." }
         ] : undefined,
         paragraphs: type === "story" ? ["Write narration paragraph here..."] : undefined,
-        image: type === "single_image" ? "/images/metro_window.png" : undefined,
+        image: type === "single_image" || type === "split_conversation_single" || type === "split_conversation_multi" ? "/images/metro_window.png" : undefined,
         images: type === "multi_image" ? ["/images/keyboard_closeup.png", "/images/coffeecup_rain.png"] : undefined,
       };
       pages.splice(selectedPgIdx + 1, 0, newPage);
@@ -168,6 +197,22 @@ export const WriterMode: React.FC = () => {
       const pg = data.chapters[selectedChIdx].pages[selectedPgIdx];
       if (pg && pg.dialogues) {
         pg.dialogues.splice(dlgIdx, 1);
+      }
+    });
+  };
+
+  const moveDialogueLine = (dlgIdx: number, direction: "up" | "down") => {
+    updateNovelData((data) => {
+      const pg = data.chapters[selectedChIdx].pages[selectedPgIdx];
+      if (pg && pg.dialogues) {
+        const list = pg.dialogues;
+        if (direction === "up" && dlgIdx === 0) return;
+        if (direction === "down" && dlgIdx === list.length - 1) return;
+        
+        const targetIdx = direction === "up" ? dlgIdx - 1 : dlgIdx + 1;
+        const temp = list[dlgIdx];
+        list[dlgIdx] = list[targetIdx];
+        list[targetIdx] = temp;
       }
     });
   };
@@ -282,10 +327,36 @@ export const WriterMode: React.FC = () => {
         </div>
 
         {/* Pages Deck List */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-2.5 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto p-4 space-y-2.5 custom-scrollbar font-sans">
           <div className="flex justify-between items-center text-[10px] uppercase font-bold text-stone-500 tracking-wider">
             <span>Pages in chapter</span>
-            <span>{activeChapter?.pages.length || 0} Pages</span>
+            <div className="flex items-center gap-1.5">
+              <select
+                onChange={(e) => {
+                  if (e.target.value) {
+                    createPage(e.target.value as PageData['type']);
+                    e.target.value = ""; // reset
+                  }
+                }}
+                className="bg-stone-800 hover:bg-stone-700 border border-stone-700 text-rose-500 text-[10px] font-sans font-bold py-0.5 px-1.5 rounded cursor-pointer max-w-[85px] outline-none"
+                defaultValue=""
+              >
+                <option value="" disabled>+ Add Page</option>
+                <option value="conversation">Conversation</option>
+                <option value="long_conversation">Long Conversation</option>
+                <option value="split_conversation_single">Split (Single)</option>
+                <option value="split_conversation_multi">Split (Multi)</option>
+                <option value="story">Story</option>
+                <option value="single_image">Single Image</option>
+                <option value="multi_image">Multi Image</option>
+                <option value="cover">Cover</option>
+                <option value="intro">Intro</option>
+                <option value="quote">Quote</option>
+                <option value="interval">Interval</option>
+                <option value="ending">Ending</option>
+              </select>
+              <span>{activeChapter?.pages.length || 0} Pages</span>
+            </div>
           </div>
           
           {activeChapter?.pages.map((p, idx) => {
@@ -361,7 +432,7 @@ export const WriterMode: React.FC = () => {
       <div className="flex-1 flex flex-col h-2/3 md:h-full overflow-hidden">
         
         {/* Editor controls ribbon */}
-        <div className="p-4 border-b border-stone-800 bg-stone-900/80 backdrop-blur-md flex justify-between items-center z-10 shrink-0">
+        <div className="p-4 border-b border-stone-800 bg-stone-900/80 backdrop-blur-md flex justify-between items-center z-10 shrink-0 select-none">
           <div className="flex items-center gap-2">
             <span className="text-xs uppercase bg-stone-800 px-2 py-0.5 rounded text-stone-300 font-mono">
               Page {selectedPgIdx + 1}
@@ -369,7 +440,27 @@ export const WriterMode: React.FC = () => {
             <span className="text-sm font-bold text-stone-200">Content Config</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3 font-sans">
+            {/* Local CMS Save Button */}
+            <button
+              onClick={saveNovelToDisk}
+              disabled={isSaving}
+              className={`flex items-center gap-1.5 py-1.5 px-3.5 rounded text-xs font-sans font-bold shadow-md transition-all duration-300 ${
+                isSaving 
+                  ? "bg-stone-850 text-stone-500 cursor-not-allowed border border-stone-800" 
+                  : "bg-emerald-600 hover:bg-emerald-700 text-white"
+              }`}
+            >
+              {isSaving ? (
+                <>
+                  <RefreshCw size={12} className="animate-spin" /> Saving...
+                </>
+              ) : (
+                <>
+                  <FileText size={12} /> Save to File
+                </>
+              )}
+            </button>
             {/* Quick Template Switcher Dropdown */}
             <select
               value={activePage?.type || "story"}
@@ -593,13 +684,31 @@ export const WriterMode: React.FC = () => {
                 <div className="space-y-3.5">
                   {activePage.dialogues?.map((dlg, dIdx) => (
                     <div key={dIdx} className="bg-stone-800/30 border border-stone-800 p-3 rounded-lg space-y-2 relative group/line">
-                      <button
-                        onClick={() => removeDialogueLine(dIdx)}
-                        className="absolute right-3 top-3 p-1 hover:bg-stone-800 text-stone-500 hover:text-red-500 rounded transition opacity-0 group-hover/line:opacity-100"
-                        title="Delete Line"
-                      >
-                        <Trash2 size={12} />
-                      </button>
+                      <div className="absolute right-3 top-2.5 flex items-center gap-1.5 transition opacity-0 group-hover/line:opacity-100 z-20">
+                        <button
+                          onClick={() => moveDialogueLine(dIdx, "up")}
+                          disabled={dIdx === 0}
+                          className="p-1 hover:bg-stone-850 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
+                          title="Move Line Up"
+                        >
+                          <ArrowUp size={11} />
+                        </button>
+                        <button
+                          onClick={() => moveDialogueLine(dIdx, "down")}
+                          disabled={dIdx === (activePage.dialogues?.length || 0) - 1}
+                          className="p-1 hover:bg-stone-850 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
+                          title="Move Line Down"
+                        >
+                          <ArrowDown size={11} />
+                        </button>
+                        <button
+                          onClick={() => removeDialogueLine(dIdx)}
+                          className="p-1 hover:bg-stone-850 text-stone-500 hover:text-red-500 rounded transition"
+                          title="Delete Line"
+                        >
+                          <Trash2 size={11} />
+                        </button>
+                      </div>
 
                       <div className="flex items-center gap-4">
                         <div className="w-1/3 flex flex-col gap-1">

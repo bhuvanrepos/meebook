@@ -1,0 +1,2334 @@
+{
+  "title": "MANDARA",
+  "part": "Part 1: Prayaanam",
+  "quote": "Prathi Prayanam... Oka Parichayamtho Modalavuthundi.",
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "number": 1,
+      "title": "Prayaanam",
+      "location": "Hyderabad Metro",
+      "time": "06:30 PM",
+      "quote": "Every journey begins with a brief silence.",
+      "pages": [
+        {
+          "id": "p1-1",
+          "type": "cover",
+          "audio": "silence",
+          "title": "MANDARA",
+          "subtitle": "Part 1: Prayaanam",
+          "quote": "Prathi Prayanam... Oka Parichayamtho Modalavuthundi.",
+          "image": "/images/cover_art.png"
+        },
+        {
+          "id": "p1-2",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 1,
+          "chapterName": "Prayaanam",
+          "location": "Hyderabad Metro Station",
+          "time": "06:30 PM",
+          "quote": "The constant hum of metal and voices. A journey of two souls waiting to connect."
+        },
+        {
+          "id": "p1-3",
+          "type": "split_conversation_single",
+          "audio": "metro",
+          "image": "/images/metro_window.png",
+          "enableZoom": true,
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?",
+              "image": "/images/metro_window.png"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost.",
+              "image": "/images/coffeecup_rain.png"
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Tinnava?",
+              "image": "/images/keyboard_closeup.png"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Ledu.",
+              "image": "/images/metro_ticket.png"
+            }
+          ]
+        },
+        {
+          "id": "p1-4",
+          "type": "single_image",
+          "audio": "metro",
+          "image": "/images/metro_window.png"
+        },
+        {
+          "id": "p1-5",
+          "type": "story",
+          "audio": "rain",
+          "paragraphs": [
+            "The clouds had been threatening all afternoon. As the train slipped past the elevated platforms, heavy rain began to lash against the glass panels, blurring the neon city lights below.",
+            "Bhairav looked at Indu. She was staring at her phone, her fingers hovering, lost in thought. A drop of condensation trailed down the window pane, mirroring the quiet sadness in her eyes."
+          ]
+        },
+        {
+          "id": "p1-6",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu ekkada unnava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Office."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Late avthundha?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Ledu."
+            }
+          ]
+        },
+        {
+          "id": "p1-7",
+          "type": "quote",
+          "audio": "silence",
+          "quote": "Konni Prayanalu... Manishini Marchesthai.",
+          "author": "Mandara"
+        },
+        {
+          "id": "p1-8",
+          "type": "multi_image",
+          "audio": "keyboard",
+          "images": [
+            "/images/keyboard_closeup.png",
+            "/images/coffeecup_rain.png",
+            "/images/metro_ticket.png"
+          ]
+        },
+        {
+          "id": "p1-9",
+          "type": "split_conversation_multi",
+          "audio": "night",
+          "title": "Late Night Crossroads",
+          "image": "/images/call.png",
+          "enableZoom": true,
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Why do we always meet at the edge of the day?",
+              "image": "/images/call.png"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Maybe because that's when we stop pretending to be busy.",
+              "image": "/images/indu.png"
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Do you ever think about turning back?",
+              "image": "/images/speech.png"
+            },
+            {
+              "speaker": "Indu",
+              "text": "I did. But the tracks only go forward.",
+              "image": "/images/indu.png"
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Nenu endhuku ila feel avthunna...?",
+              "thought": true,
+              "image": "/images/speech.png"
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Then let's see where they lead.",
+              "image": "/images/call.png"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Even if they lead to nowhere?",
+              "image": "/images/indu.png"
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "There is no 'nowhere' when we are travelling together.",
+              "image": "/images/speech.png"
+            }
+          ]
+        },
+        {
+          "id": "p1-10",
+          "type": "interval",
+          "audio": "temple",
+          "quote": "A brief pause before the destination comes into view."
+        },
+        {
+          "id": "p1-11",
+          "type": "ending",
+          "audio": "wind",
+          "quote": "And just like that, the first stop was reached. But the journey of Mandara has only begun.",
+          "part": "Part 2: Agamanam"
+        }
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "number": 2,
+      "title": "Chapter 2 Title",
+      "location": "Cafe Coffee Day",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p2-1",
+          "type": "intro",
+          "audio": "rain",
+          "chapterNumber": 2,
+          "chapterName": "Chapter 2 Title",
+          "location": "Cafe Coffee Day",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p2-2",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p2-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_2.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "number": 3,
+      "title": "Chapter 3 Title",
+      "location": "Central Park Bench",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p3-1",
+          "type": "intro",
+          "audio": "silence",
+          "chapterNumber": 3,
+          "chapterName": "Chapter 3 Title",
+          "location": "Central Park Bench",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p3-2",
+          "type": "conversation",
+          "audio": "silence",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p3-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_3.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "number": 4,
+      "title": "Chapter 4 Title",
+      "location": "Office Library",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p4-1",
+          "type": "intro",
+          "audio": "wind",
+          "chapterNumber": 4,
+          "chapterName": "Chapter 4 Title",
+          "location": "Office Library",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p4-2",
+          "type": "conversation",
+          "audio": "wind",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p4-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_4.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "number": 5,
+      "title": "Chapter 5 Title",
+      "location": "Lakeside Walking Path",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p5-1",
+          "type": "intro",
+          "audio": "birds",
+          "chapterNumber": 5,
+          "chapterName": "Chapter 5 Title",
+          "location": "Lakeside Walking Path",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p5-2",
+          "type": "conversation",
+          "audio": "birds",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p5-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_5.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "number": 6,
+      "title": "Chapter 6 Title",
+      "location": "Rainy Bus Stop",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p6-1",
+          "type": "intro",
+          "audio": "night",
+          "chapterNumber": 6,
+          "chapterName": "Chapter 6 Title",
+          "location": "Rainy Bus Stop",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p6-2",
+          "type": "conversation",
+          "audio": "night",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p6-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_6.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-7",
+      "number": 7,
+      "title": "Chapter 7 Title",
+      "location": "Corporate High-Rise",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p7-1",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 7,
+          "chapterName": "Chapter 7 Title",
+          "location": "Corporate High-Rise",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p7-2",
+          "type": "conversation",
+          "audio": "metro",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p7-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_7.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-8",
+      "number": 8,
+      "title": "Chapter 8 Title",
+      "location": "Old City Temple",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p8-1",
+          "type": "intro",
+          "audio": "temple",
+          "chapterNumber": 8,
+          "chapterName": "Chapter 8 Title",
+          "location": "Old City Temple",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p8-2",
+          "type": "conversation",
+          "audio": "temple",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p8-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_8.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-9",
+      "number": 9,
+      "title": "Chapter 9 Title",
+      "location": "Quiet Residential Lane",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p9-1",
+          "type": "intro",
+          "audio": "keyboard",
+          "chapterNumber": 9,
+          "chapterName": "Chapter 9 Title",
+          "location": "Quiet Residential Lane",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p9-2",
+          "type": "conversation",
+          "audio": "keyboard",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p9-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_9.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-10",
+      "number": 10,
+      "title": "Chapter 10 Title",
+      "location": "Cozy Balcony",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p10-1",
+          "type": "intro",
+          "audio": "rain",
+          "chapterNumber": 10,
+          "chapterName": "Chapter 10 Title",
+          "location": "Cozy Balcony",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p10-2",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p10-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_10.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-11",
+      "number": 11,
+      "title": "Chapter 11 Title",
+      "location": "Late Night Diner",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p11-1",
+          "type": "intro",
+          "audio": "silence",
+          "chapterNumber": 11,
+          "chapterName": "Chapter 11 Title",
+          "location": "Late Night Diner",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p11-2",
+          "type": "conversation",
+          "audio": "silence",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p11-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_11.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-12",
+      "number": 12,
+      "title": "Chapter 12 Title",
+      "location": "Sparsely Filled Elevator",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p12-1",
+          "type": "intro",
+          "audio": "wind",
+          "chapterNumber": 12,
+          "chapterName": "Chapter 12 Title",
+          "location": "Sparsely Filled Elevator",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p12-2",
+          "type": "conversation",
+          "audio": "wind",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p12-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_12.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-13",
+      "number": 13,
+      "title": "Chapter 13 Title",
+      "location": "Art Gallery",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p13-1",
+          "type": "intro",
+          "audio": "birds",
+          "chapterNumber": 13,
+          "chapterName": "Chapter 13 Title",
+          "location": "Art Gallery",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p13-2",
+          "type": "conversation",
+          "audio": "birds",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p13-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_13.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-14",
+      "number": 14,
+      "title": "Chapter 14 Title",
+      "location": "Cafe Coffee Day",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p14-1",
+          "type": "intro",
+          "audio": "night",
+          "chapterNumber": 14,
+          "chapterName": "Chapter 14 Title",
+          "location": "Cafe Coffee Day",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p14-2",
+          "type": "conversation",
+          "audio": "night",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p14-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_14.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-15",
+      "number": 15,
+      "title": "Chapter 15 Title",
+      "location": "Central Park Bench",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p15-1",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 15,
+          "chapterName": "Chapter 15 Title",
+          "location": "Central Park Bench",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p15-2",
+          "type": "conversation",
+          "audio": "metro",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p15-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_15.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-16",
+      "number": 16,
+      "title": "Chapter 16 Title",
+      "location": "Office Library",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p16-1",
+          "type": "intro",
+          "audio": "temple",
+          "chapterNumber": 16,
+          "chapterName": "Chapter 16 Title",
+          "location": "Office Library",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p16-2",
+          "type": "conversation",
+          "audio": "temple",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p16-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_16.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-17",
+      "number": 17,
+      "title": "Chapter 17 Title",
+      "location": "Lakeside Walking Path",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p17-1",
+          "type": "intro",
+          "audio": "keyboard",
+          "chapterNumber": 17,
+          "chapterName": "Chapter 17 Title",
+          "location": "Lakeside Walking Path",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p17-2",
+          "type": "conversation",
+          "audio": "keyboard",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p17-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_17.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-18",
+      "number": 18,
+      "title": "Chapter 18 Title",
+      "location": "Rainy Bus Stop",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p18-1",
+          "type": "intro",
+          "audio": "rain",
+          "chapterNumber": 18,
+          "chapterName": "Chapter 18 Title",
+          "location": "Rainy Bus Stop",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p18-2",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p18-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_18.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-19",
+      "number": 19,
+      "title": "Chapter 19 Title",
+      "location": "Corporate High-Rise",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p19-1",
+          "type": "intro",
+          "audio": "silence",
+          "chapterNumber": 19,
+          "chapterName": "Chapter 19 Title",
+          "location": "Corporate High-Rise",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p19-2",
+          "type": "conversation",
+          "audio": "silence",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p19-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_19.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-20",
+      "number": 20,
+      "title": "Chapter 20 Title",
+      "location": "Old City Temple",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p20-1",
+          "type": "intro",
+          "audio": "wind",
+          "chapterNumber": 20,
+          "chapterName": "Chapter 20 Title",
+          "location": "Old City Temple",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p20-2",
+          "type": "conversation",
+          "audio": "wind",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p20-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_20.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-21",
+      "number": 21,
+      "title": "Chapter 21 Title",
+      "location": "Quiet Residential Lane",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p21-1",
+          "type": "intro",
+          "audio": "birds",
+          "chapterNumber": 21,
+          "chapterName": "Chapter 21 Title",
+          "location": "Quiet Residential Lane",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p21-2",
+          "type": "conversation",
+          "audio": "birds",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p21-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_21.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-22",
+      "number": 22,
+      "title": "Chapter 22 Title",
+      "location": "Cozy Balcony",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p22-1",
+          "type": "intro",
+          "audio": "night",
+          "chapterNumber": 22,
+          "chapterName": "Chapter 22 Title",
+          "location": "Cozy Balcony",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p22-2",
+          "type": "conversation",
+          "audio": "night",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p22-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_22.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-23",
+      "number": 23,
+      "title": "Chapter 23 Title",
+      "location": "Late Night Diner",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p23-1",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 23,
+          "chapterName": "Chapter 23 Title",
+          "location": "Late Night Diner",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p23-2",
+          "type": "conversation",
+          "audio": "metro",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p23-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_23.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-24",
+      "number": 24,
+      "title": "Chapter 24 Title",
+      "location": "Sparsely Filled Elevator",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p24-1",
+          "type": "intro",
+          "audio": "temple",
+          "chapterNumber": 24,
+          "chapterName": "Chapter 24 Title",
+          "location": "Sparsely Filled Elevator",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p24-2",
+          "type": "conversation",
+          "audio": "temple",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p24-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_24.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-25",
+      "number": 25,
+      "title": "Chapter 25 Title",
+      "location": "Art Gallery",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p25-1",
+          "type": "intro",
+          "audio": "keyboard",
+          "chapterNumber": 25,
+          "chapterName": "Chapter 25 Title",
+          "location": "Art Gallery",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p25-2",
+          "type": "conversation",
+          "audio": "keyboard",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p25-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_25.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-26",
+      "number": 26,
+      "title": "Chapter 26 Title",
+      "location": "Cafe Coffee Day",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p26-1",
+          "type": "intro",
+          "audio": "rain",
+          "chapterNumber": 26,
+          "chapterName": "Chapter 26 Title",
+          "location": "Cafe Coffee Day",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p26-2",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p26-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_26.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-27",
+      "number": 27,
+      "title": "Chapter 27 Title",
+      "location": "Central Park Bench",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p27-1",
+          "type": "intro",
+          "audio": "silence",
+          "chapterNumber": 27,
+          "chapterName": "Chapter 27 Title",
+          "location": "Central Park Bench",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p27-2",
+          "type": "conversation",
+          "audio": "silence",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p27-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_27.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-28",
+      "number": 28,
+      "title": "Chapter 28 Title",
+      "location": "Office Library",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p28-1",
+          "type": "intro",
+          "audio": "wind",
+          "chapterNumber": 28,
+          "chapterName": "Chapter 28 Title",
+          "location": "Office Library",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p28-2",
+          "type": "conversation",
+          "audio": "wind",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p28-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_28.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-29",
+      "number": 29,
+      "title": "Chapter 29 Title",
+      "location": "Lakeside Walking Path",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p29-1",
+          "type": "intro",
+          "audio": "birds",
+          "chapterNumber": 29,
+          "chapterName": "Chapter 29 Title",
+          "location": "Lakeside Walking Path",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p29-2",
+          "type": "conversation",
+          "audio": "birds",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p29-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_29.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-30",
+      "number": 30,
+      "title": "Chapter 30 Title",
+      "location": "Rainy Bus Stop",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p30-1",
+          "type": "intro",
+          "audio": "night",
+          "chapterNumber": 30,
+          "chapterName": "Chapter 30 Title",
+          "location": "Rainy Bus Stop",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p30-2",
+          "type": "conversation",
+          "audio": "night",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p30-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_30.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-31",
+      "number": 31,
+      "title": "Chapter 31 Title",
+      "location": "Corporate High-Rise",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p31-1",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 31,
+          "chapterName": "Chapter 31 Title",
+          "location": "Corporate High-Rise",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p31-2",
+          "type": "conversation",
+          "audio": "metro",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p31-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_31.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-32",
+      "number": 32,
+      "title": "Chapter 32 Title",
+      "location": "Old City Temple",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p32-1",
+          "type": "intro",
+          "audio": "temple",
+          "chapterNumber": 32,
+          "chapterName": "Chapter 32 Title",
+          "location": "Old City Temple",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p32-2",
+          "type": "conversation",
+          "audio": "temple",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p32-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_32.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-33",
+      "number": 33,
+      "title": "Chapter 33 Title",
+      "location": "Quiet Residential Lane",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p33-1",
+          "type": "intro",
+          "audio": "keyboard",
+          "chapterNumber": 33,
+          "chapterName": "Chapter 33 Title",
+          "location": "Quiet Residential Lane",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p33-2",
+          "type": "conversation",
+          "audio": "keyboard",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p33-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_33.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-34",
+      "number": 34,
+      "title": "Chapter 34 Title",
+      "location": "Cozy Balcony",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p34-1",
+          "type": "intro",
+          "audio": "rain",
+          "chapterNumber": 34,
+          "chapterName": "Chapter 34 Title",
+          "location": "Cozy Balcony",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p34-2",
+          "type": "conversation",
+          "audio": "rain",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p34-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_34.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-35",
+      "number": 35,
+      "title": "Chapter 35 Title",
+      "location": "Late Night Diner",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p35-1",
+          "type": "intro",
+          "audio": "silence",
+          "chapterNumber": 35,
+          "chapterName": "Chapter 35 Title",
+          "location": "Late Night Diner",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p35-2",
+          "type": "conversation",
+          "audio": "silence",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p35-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_35.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-36",
+      "number": 36,
+      "title": "Chapter 36 Title",
+      "location": "Sparsely Filled Elevator",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p36-1",
+          "type": "intro",
+          "audio": "wind",
+          "chapterNumber": 36,
+          "chapterName": "Chapter 36 Title",
+          "location": "Sparsely Filled Elevator",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p36-2",
+          "type": "conversation",
+          "audio": "wind",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p36-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_36.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-37",
+      "number": 37,
+      "title": "Chapter 37 Title",
+      "location": "Art Gallery",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p37-1",
+          "type": "intro",
+          "audio": "birds",
+          "chapterNumber": 37,
+          "chapterName": "Chapter 37 Title",
+          "location": "Art Gallery",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p37-2",
+          "type": "conversation",
+          "audio": "birds",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p37-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_37.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-38",
+      "number": 38,
+      "title": "Chapter 38 Title",
+      "location": "Cafe Coffee Day",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p38-1",
+          "type": "intro",
+          "audio": "night",
+          "chapterNumber": 38,
+          "chapterName": "Chapter 38 Title",
+          "location": "Cafe Coffee Day",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p38-2",
+          "type": "conversation",
+          "audio": "night",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p38-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_38.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-39",
+      "number": 39,
+      "title": "Chapter 39 Title",
+      "location": "Central Park Bench",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p39-1",
+          "type": "intro",
+          "audio": "metro",
+          "chapterNumber": 39,
+          "chapterName": "Chapter 39 Title",
+          "location": "Central Park Bench",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p39-2",
+          "type": "conversation",
+          "audio": "metro",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p39-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_39.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter-40",
+      "number": 40,
+      "title": "Chapter 40 Title",
+      "location": "Office Library",
+      "time": "07:30 PM",
+      "quote": "Write chapter quote here...",
+      "pages": [
+        {
+          "id": "p40-1",
+          "type": "intro",
+          "audio": "temple",
+          "chapterNumber": 40,
+          "chapterName": "Chapter 40 Title",
+          "location": "Office Library",
+          "time": "07:30 PM",
+          "quote": "A short introductory quote describing the emotional setting of this chapter."
+        },
+        {
+          "id": "p40-2",
+          "type": "conversation",
+          "audio": "temple",
+          "dialogues": [
+            {
+              "speaker": "Bhairav",
+              "text": "Nuvvu office ki vellava?"
+            },
+            {
+              "speaker": "Indu",
+              "text": "Almost."
+            },
+            {
+              "speaker": "Bhairav",
+              "text": "Write your dialogues here..."
+            },
+            {
+              "speaker": "Indu",
+              "text": "Nenu thanaki cheppala...?",
+              "thought": true
+            },
+            {
+              "speaker": "Indu",
+              "text": "Change these dialogues in the code file."
+            }
+          ]
+        },
+        {
+          "id": "p40-3",
+          "type": "single_image",
+          "audio": "silence",
+          "image": "/images/chapter_40.png"
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "bhairav",
+      "name": "Bhairav",
+      "quote": "Life is like a train ticket. You pay for the journey, not the destination.",
+      "description": "A calm, introspective software developer who finds comfort in train rides, city lights, and silent observers. He feels a sudden, unexplainable connection with Indu.",
+      "sketch": "bhairav_portrait"
+    },
+    {
+      "id": "indu",
+      "name": "Indu",
+      "quote": "I hide behind my screens, hoping someone will read the unwritten text.",
+      "description": "A designer running away from familial expectations. Creative yet deeply guarded, she speaks in fragments but holds worlds of unspoken thoughts inside.",
+      "sketch": "indu_portrait"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-cover",
+      "chapterId": "chapter-1",
+      "title": "MANDARA Bloom",
+      "image": "/images/cover_art.png",
+      "description": "The blooming crimson Mandara flower, representing the birth of a silent bond."
+    },
+    {
+      "id": "gal-metro",
+      "chapterId": "chapter-1",
+      "title": "Metro Rain Window",
+      "image": "/images/metro_window.png",
+      "description": "Neon city lights blurred by rain, seen from inside the Metro."
+    },
+    {
+      "id": "gal-details",
+      "chapterId": "chapter-1",
+      "title": "Small Connections",
+      "image": "/images/coffeecup_rain.png",
+      "description": "Warm coffee cups, train tickets, and late night texts."
+    }
+  ]
+}
