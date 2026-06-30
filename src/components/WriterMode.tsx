@@ -684,32 +684,6 @@ export const WriterMode: React.FC = () => {
                 <div className="space-y-3.5">
                   {activePage.dialogues?.map((dlg, dIdx) => (
                     <div key={dIdx} className="bg-stone-800/30 border border-stone-800 p-3 rounded-lg space-y-2 relative group/line">
-                      <div className="absolute right-3 top-2.5 flex items-center gap-1.5 transition opacity-0 group-hover/line:opacity-100 z-20">
-                        <button
-                          onClick={() => moveDialogueLine(dIdx, "up")}
-                          disabled={dIdx === 0}
-                          className="p-1 hover:bg-stone-850 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
-                          title="Move Line Up"
-                        >
-                          <ArrowUp size={11} />
-                        </button>
-                        <button
-                          onClick={() => moveDialogueLine(dIdx, "down")}
-                          disabled={dIdx === (activePage.dialogues?.length || 0) - 1}
-                          className="p-1 hover:bg-stone-850 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
-                          title="Move Line Down"
-                        >
-                          <ArrowDown size={11} />
-                        </button>
-                        <button
-                          onClick={() => removeDialogueLine(dIdx)}
-                          className="p-1 hover:bg-stone-850 text-stone-500 hover:text-red-500 rounded transition"
-                          title="Delete Line"
-                        >
-                          <Trash2 size={11} />
-                        </button>
-                      </div>
-
                       <div className="flex items-center gap-4">
                         <div className="w-1/3 flex flex-col gap-1">
                           <span className="text-[10px] uppercase font-bold text-stone-500">Speaker</span>
@@ -746,14 +720,46 @@ export const WriterMode: React.FC = () => {
                         <div className="flex-1 flex flex-col gap-1">
                           <div className="flex justify-between items-center">
                             <span className="text-[10px] uppercase font-bold text-stone-500">Dialogue</span>
-                            <label className="flex items-center gap-1 text-[9px] text-stone-400 font-bold uppercase cursor-pointer">
-                              <input
-                                type="checkbox"
-                                checked={!!dlg.thought}
-                                onChange={(e) => updateDialogue(dIdx, "thought", e.target.checked)}
-                                className="accent-rose-600"
-                              /> Inner Thought
-                            </label>
+                            <div className="flex items-center gap-2">
+                              {/* Inner Thought Toggle */}
+                              <label className="flex items-center gap-1 text-[9px] text-stone-400 font-bold uppercase cursor-pointer select-none">
+                                <input
+                                  type="checkbox"
+                                  checked={!!dlg.thought}
+                                  onChange={(e) => updateDialogue(dIdx, "thought", e.target.checked)}
+                                  className="accent-rose-600"
+                                /> Inner Thought
+                              </label>
+
+                              <span className="text-stone-700 text-[10px] select-none">|</span>
+
+                              {/* Ordering & Delete Row buttons */}
+                              <div className="flex items-center gap-0.5 bg-stone-900/60 p-0.5 rounded border border-stone-850">
+                                <button
+                                  onClick={() => moveDialogueLine(dIdx, "up")}
+                                  disabled={dIdx === 0}
+                                  className="p-0.5 hover:bg-stone-800 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
+                                  title="Move Up"
+                                >
+                                  <ArrowUp size={10} />
+                                </button>
+                                <button
+                                  onClick={() => moveDialogueLine(dIdx, "down")}
+                                  disabled={dIdx === (activePage.dialogues?.length || 0) - 1}
+                                  className="p-0.5 hover:bg-stone-800 text-stone-400 hover:text-white rounded disabled:opacity-30 transition"
+                                  title="Move Down"
+                                >
+                                  <ArrowDown size={10} />
+                                </button>
+                                <button
+                                  onClick={() => removeDialogueLine(dIdx)}
+                                  className="p-0.5 hover:bg-stone-800 text-stone-500 hover:text-red-500 rounded transition ml-0.5 border-l border-stone-800 pl-1"
+                                  title="Delete Line"
+                                >
+                                  <Trash2 size={10} />
+                                </button>
+                              </div>
+                            </div>
                           </div>
                           <input
                             type="text"
