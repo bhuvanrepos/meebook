@@ -256,6 +256,15 @@ const SplitConversation: React.FC<SplitConversationProps> = ({
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      // If we are at the very top of the scroll container, keep the first line active
+      if (container.scrollTop < 10) {
+        setActiveIdx(0);
+        if (page.dialogues && page.dialogues.length > 0) {
+          setActiveImage(page.dialogues[0].image || page.image);
+        }
+        return;
+      }
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const idxStr = entry.target.getAttribute("data-index");
@@ -438,6 +447,12 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      // If we are at the very top of the scroll container, keep the first line active
+      if (container.scrollTop < 10) {
+        setActiveIdx(0);
+        return;
+      }
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const idxStr = entry.target.getAttribute("data-index");
