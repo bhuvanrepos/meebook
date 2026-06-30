@@ -545,6 +545,35 @@ export const WriterMode: React.FC = () => {
                   </div>
                 )}
 
+                {activePage.type === "split_conversation" && (
+                  <div className="space-y-3 p-3 bg-stone-900/40 rounded-lg border border-stone-800/80 mb-3">
+                    <span className="text-[10px] uppercase font-bold text-stone-400 block mb-1">Page Settings</span>
+                    <div className="flex flex-col gap-1">
+                      <label className="text-[10px] uppercase text-stone-500 font-bold flex items-center gap-1">
+                        <ImageIcon size={10} /> Default Page Image
+                      </label>
+                      <input
+                        type="text"
+                        value={activePage.image || ""}
+                        onChange={(e) => updatePageField("image", e.target.value)}
+                        className="writer-input bg-stone-800 border-stone-700 text-white font-mono text-[10px] py-1"
+                        placeholder="Fallback page-level image URL..."
+                      />
+                    </div>
+                    <div className="flex items-center gap-2 pt-1.5">
+                      <label className="flex items-center gap-2 text-[10px] uppercase text-stone-400 font-bold cursor-pointer select-none">
+                        <input
+                          type="checkbox"
+                          checked={!!activePage.enableZoom}
+                          onChange={(e) => updatePageField("enableZoom", e.target.checked)}
+                          className="accent-rose-600"
+                        />
+                        🔍 Enable Zoom Hint for Readers
+                      </label>
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex justify-between items-center text-xs text-stone-400 font-bold uppercase pb-1 border-b border-stone-800">
                   <span>Dialogue Block Lines</span>
                   <button
@@ -694,6 +723,18 @@ export const WriterMode: React.FC = () => {
                   <span className="text-[9px] text-stone-500 leading-normal">
                     Tip: Enter relative paths (e.g. `/images/...`) or external URLs. Fallback illustrations display if paths are blank.
                   </span>
+                  
+                  <div className="flex items-center gap-2 mt-2 pt-2 border-t border-stone-800/40">
+                    <label className="flex items-center gap-2 text-xs uppercase text-stone-400 font-bold cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={!!activePage.enableZoom}
+                        onChange={(e) => updatePageField("enableZoom", e.target.checked)}
+                        className="accent-rose-600"
+                      />
+                      🔍 Enable Zoom Hint for Readers
+                    </label>
+                  </div>
                 </div>
               </div>
             )}
@@ -742,6 +783,18 @@ export const WriterMode: React.FC = () => {
                       </button>
                     </div>
                   ))}
+                </div>
+
+                <div className="flex items-center gap-2 mt-4 pt-3 border-t border-stone-800">
+                  <label className="flex items-center gap-2 text-xs uppercase text-stone-400 font-bold cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={!!activePage.enableZoom}
+                      onChange={(e) => updatePageField("enableZoom", e.target.checked)}
+                      className="accent-rose-600"
+                    />
+                    🔍 Enable Zoom Hint for Readers
+                  </label>
                 </div>
               </div>
             )}

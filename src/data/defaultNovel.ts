@@ -23,6 +23,7 @@ export interface PageData {
   image?: string;
   images?: string[];
   part?: string;
+  enableZoom?: boolean;
 }
 
 export interface ChapterData {
@@ -95,6 +96,7 @@ const generateChapters = (): ChapterData[] => {
           type: "split_conversation",
           audio: "metro",
           image: "/images/metro_window.png",
+          enableZoom: true,
           dialogues: [
             { speaker: "Bhairav", text: "Nuvvu office ki vellava?", image: "/images/metro_window.png" },
             { speaker: "Indu", text: "Almost.", image: "/images/coffeecup_rain.png" },
@@ -152,6 +154,7 @@ const generateChapters = (): ChapterData[] => {
           audio: "night",
           title: "Late Night Crossroads",
           image: "/images/call.png",
+          enableZoom: true,
           dialogues: [
             { speaker: "Bhairav", text: "Why do we always meet at the edge of the day?", image: "/images/call.png" },
             { speaker: "Indu", text: "Maybe because that's when we stop pretending to be busy.", image: "/images/indu.png" },

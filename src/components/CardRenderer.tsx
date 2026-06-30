@@ -274,7 +274,7 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
   return (
     <div className="flex flex-row h-full w-full overflow-hidden select-text">
       {/* LEFT COLUMN: Sticky Image Window (45%) */}
-      <div className="w-[45%] h-full pr-3.5 border-r border-[var(--border)]/15 flex flex-col justify-center relative shrink-0">
+      <div className="w-[45%] h-full pr-3.5 border-r border-[var(--border)]/15 flex flex-col justify-center items-center relative shrink-0 gap-2 select-none">
         <div 
           onClick={() => activeImage && setLightboxImage(activeImage)}
           className="w-full aspect-[4/5] rounded-xl overflow-hidden border border-[var(--border)] shadow-premium cursor-zoom-in relative bg-[var(--background)]"
@@ -293,6 +293,11 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
           </AnimatePresence>
           <div className="absolute inset-0 bg-black/5 pointer-events-none" />
         </div>
+        {page.enableZoom && (
+          <span className="text-[8px] md:text-[9px] text-center text-[var(--foreground)] opacity-40 tracking-wider uppercase font-sans font-bold animate-pulse leading-normal select-none">
+            🔍 Click to view full image
+          </span>
+        )}
       </div>
 
       {/* RIGHT COLUMN: Scrollable Dialogue Container (55%) */}
@@ -588,10 +593,10 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
 
         {/* SINGLE IMAGE PAGE */}
         {page.type === "single_image" && (
-          <div className="flex items-center justify-center w-full h-full p-2">
+          <div className="flex flex-col items-center justify-center w-full h-full p-2 gap-3 select-none">
             <div 
               onClick={() => page.image && setLightboxImage(page.image)}
-              className="w-full h-[65dvh] rounded-lg overflow-hidden border border-[var(--border)] shadow-premium cursor-zoom-in relative group"
+              className="w-full flex-1 rounded-lg overflow-hidden border border-[var(--border)] shadow-premium cursor-zoom-in relative group min-h-[45dvh]"
             >
               <CardImage src={page.image} className="w-full h-full object-cover animate-kenburns" />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors pointer-events-none" />
@@ -600,12 +605,17 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
                 <Maximize2 size={16} />
               </div>
             </div>
+            {page.enableZoom && (
+              <span className="text-[10px] text-[var(--foreground)] opacity-50 tracking-wider uppercase font-sans font-bold flex items-center gap-1.5 animate-pulse mt-0.5">
+                🔍 Click to view full image
+              </span>
+            )}
           </div>
         )}
 
         {/* MULTI IMAGE PAGE (MASONRY GRID) */}
         {page.type === "multi_image" && (
-          <div className="w-full h-full flex items-center justify-center p-2">
+          <div className="w-full h-full flex flex-col justify-center items-center p-2 gap-4 select-none">
             <div className="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
               {page.images && page.images.map((img, idx) => {
                 // If odd number and last element, stretch across 2 columns
@@ -624,6 +634,11 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
                 );
               })}
             </div>
+            {page.enableZoom && (
+              <span className="text-[10px] text-[var(--foreground)] opacity-50 tracking-wider uppercase font-sans font-bold flex items-center gap-1.5 animate-pulse mt-1">
+                🔍 Click images to view full screen
+              </span>
+            )}
           </div>
         )}
 
