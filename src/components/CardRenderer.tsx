@@ -230,8 +230,19 @@ interface SplitConversationProps {
 
 const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightboxImage, isStatic = false }) => {
   const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Set default initial state on load
+  useEffect(() => {
+    setActiveIdx(0);
+    if (page.dialogues && page.dialogues.length > 0) {
+      setActiveImage(page.dialogues[0].image || page.image);
+    } else {
+      setActiveImage(page.image);
+    }
+  }, [page.dialogues, page.image]);
+
   useEffect(() => {
     if (isStatic) {
       setActiveImage(page.image);
@@ -243,16 +254,21 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
 
     const observerOptions = {
       root: container,
-      rootMargin: "-25% 0px -55% 0px", // focus target area
+      rootMargin: "-30% 0px -45% 0px", // focus target area centered vertically
       threshold: 0.1,
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const imgPath = entry.target.getAttribute("data-image");
-          if (imgPath) {
-            setActiveImage(imgPath);
+          const idxStr = entry.target.getAttribute("data-index");
+          if (idxStr !== null) {
+            const index = parseInt(idxStr, 10);
+            setActiveIdx(index);
+            const imgPath = entry.target.getAttribute("data-image");
+            if (imgPath) {
+              setActiveImage(imgPath);
+            }
           }
         }
       });
@@ -262,24 +278,10 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
     const rows = container.querySelectorAll("[data-dialogue-row]");
     rows.forEach((row) => observer.observe(row));
 
-    // Initial setup
-    if (isStatic) {
-      setActiveImage(page.image);
-    } else {
-      if (page.dialogues && page.dialogues.length > 0) {
-        const firstWithImg = page.dialogues.find(d => d.image);
-        if (firstWithImg && firstWithImg.image) {
-          setActiveImage(firstWithImg.image);
-        } else if (page.image) {
-          setActiveImage(page.image);
-        }
-      }
-    }
-
     return () => {
       observer.disconnect();
     };
-  }, [page.dialogues, page.image]);
+  }, [page.dialogues, page.image, isStatic]);
 
   return (
     <div className="flex flex-row h-full w-full overflow-hidden select-text">
@@ -323,13 +325,23 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
           if (isIndu) nameColor = "text-amber-600 font-semibold";
 
           const rowImage = isStatic ? page.image : (dlg.image || page.image);
+          const isActive = idx === activeIdx;
 
           return (
             <div 
               key={idx} 
               data-dialogue-row
+              data-index={idx}
               data-image={rowImage}
-              className="space-y-1 border-l border-[var(--border)]/15 pl-3 py-0.5 scroll-mt-6 transition-all duration-300 hover:border-[var(--accent)]/40"
+              onClick={() => {
+                setActiveIdx(idx);
+                if (rowImage) setActiveImage(rowImage);
+              }}
+              className={`space-y-1 pl-3.5 py-2 pr-2 scroll-mt-6 transition-all duration-300 cursor-pointer rounded-r-md select-text ${
+                isActive 
+                  ? "border-l-2 border-[var(--accent)] bg-[var(--accent)]/5 opacity-100 shadow-sm" 
+                  : "border-l border-[var(--border)]/15 opacity-40 hover:opacity-75 hover:border-[var(--accent)]/30"
+              }`}
             >
               {dlg.speaker && (
                 <div className={`text-[10px] uppercase tracking-wider ${nameColor} font-sans`}>
@@ -338,7 +350,7 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
               )}
               <div className="text-xs md:text-sm font-lora leading-relaxed text-[var(--foreground)]">
                 {dlg.thought ? (
-                  <span className="italic opacity-70 font-light">({dlg.text})</span>
+                  <span className="italic opacity-75 font-light">({dlg.text})</span>
                 ) : (
                   `"${dlg.text}"`
                 )}
