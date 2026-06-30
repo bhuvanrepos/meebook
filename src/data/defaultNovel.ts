@@ -92,13 +92,14 @@ const generateChapters = (): ChapterData[] => {
         },
         {
           id: "p1-3",
-          type: "conversation",
+          type: "split_conversation",
           audio: "metro",
+          image: "/images/metro_window.png",
           dialogues: [
-            { speaker: "Bhairav", text: "Nuvvu office ki vellava?" },
-            { speaker: "Indu", text: "Almost." },
-            { speaker: "Bhairav", text: "Tinnava?" },
-            { speaker: "Indu", text: "Ledu." }
+            { speaker: "Bhairav", text: "Nuvvu office ki vellava?", image: "/images/metro_window.png" },
+            { speaker: "Indu", text: "Almost.", image: "/images/coffeecup_rain.png" },
+            { speaker: "Bhairav", text: "Tinnava?", image: "/images/keyboard_closeup.png" },
+            { speaker: "Indu", text: "Ledu.", image: "/images/metro_ticket.png" }
           ]
         },
         {
