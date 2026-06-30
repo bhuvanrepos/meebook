@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Volume2, VolumeX, Bookmark, Check, ZoomIn, ZoomOut, Maximize2, X, ChevronRight, Play 
@@ -219,7 +219,125 @@ const CardImage: React.FC<{ src?: string; alt?: string; className?: string }> = 
 };
 
 // ==========================================
-// 2. CARD RENDERER DISPATCHER
+// 2. SPLIT CONVERSATION ENGINE (SCROLL-SYNC)
+// ==========================================
+
+interface SplitConversationProps {
+  page: PageData;
+  setLightboxImage: (src: string | null) => void;
+}
+
+const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightboxImage }) => {
+  const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observerOptions = {
+      root: container,
+      rootMargin: "-25% 0px -55% 0px", // focus target area
+      threshold: 0.1,
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const imgPath = entry.target.getAttribute("data-image");
+          if (imgPath) {
+            setActiveImage(imgPath);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    const rows = container.querySelectorAll("[data-dialogue-row]");
+    rows.forEach((row) => observer.observe(row));
+
+    // Initial setup
+    if (page.dialogues && page.dialogues.length > 0) {
+      const firstWithImg = page.dialogues.find(d => d.image);
+      if (firstWithImg && firstWithImg.image) {
+        setActiveImage(firstWithImg.image);
+      } else if (page.image) {
+        setActiveImage(page.image);
+      }
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [page.dialogues, page.image]);
+
+  return (
+    <div className="flex flex-row h-full w-full overflow-hidden select-text">
+      {/* LEFT COLUMN: Sticky Image Window (45%) */}
+      <div className="w-[45%] h-full pr-3.5 border-r border-[var(--border)]/15 flex flex-col justify-center relative shrink-0">
+        <div 
+          onClick={() => activeImage && setLightboxImage(activeImage)}
+          className="w-full aspect-[4/5] rounded-xl overflow-hidden border border-[var(--border)] shadow-premium cursor-zoom-in relative bg-[var(--background)]"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeImage || "fallback"}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <CardImage src={activeImage} className="w-full h-full object-cover" />
+            </motion.div>
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+        </div>
+      </div>
+
+      {/* RIGHT COLUMN: Scrollable Dialogue Container (55%) */}
+      <div 
+        ref={containerRef}
+        className="w-[55%] h-full overflow-y-auto pl-4 pr-1 custom-scrollbar flex flex-col py-4 gap-7 touch-pan-y"
+      >
+        {page.dialogues && page.dialogues.map((dlg, idx) => {
+          const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
+          const isIndu = dlg.speaker.toLowerCase() === "indu";
+          let nameColor = "text-[var(--foreground)]/80";
+          if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
+          if (isIndu) nameColor = "text-amber-600 font-semibold";
+
+          const rowImage = dlg.image || page.image;
+
+          return (
+            <div 
+              key={idx} 
+              data-dialogue-row
+              data-image={rowImage}
+              className="space-y-1 border-l border-[var(--border)]/15 pl-3 py-0.5 scroll-mt-6 transition-all duration-300 hover:border-[var(--accent)]/40"
+            >
+              {dlg.speaker && (
+                <div className={`text-[10px] uppercase tracking-wider ${nameColor} font-sans`}>
+                  {dlg.speaker}
+                </div>
+              )}
+              <div className="text-xs md:text-sm font-lora leading-relaxed text-[var(--foreground)]">
+                {dlg.thought ? (
+                  <span className="italic opacity-70 font-light">({dlg.text})</span>
+                ) : (
+                  `"${dlg.text}"`
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ==========================================
+// 3. CARD RENDERER DISPATCHER
 // ==========================================
 
 interface CardRendererProps {
@@ -442,6 +560,13 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
                 );
               })}
             </div>
+          </div>
+        )}
+
+        {/* SPLIT SCREEN SCROLL-SYNC CONVERSATION PAGE */}
+        {page.type === "split_conversation" && (
+          <div className="flex-1 w-full h-full overflow-hidden my-auto py-2">
+            <SplitConversation page={page} setLightboxImage={setLightboxImage} />
           </div>
         )}
 

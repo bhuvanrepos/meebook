@@ -2,11 +2,12 @@ export interface DialogueLine {
   speaker: string;
   text: string;
   thought?: boolean;
+  image?: string;
 }
 
 export interface PageData {
   id: string;
-  type: 'cover' | 'intro' | 'conversation' | 'long_conversation' | 'story' | 'single_image' | 'multi_image' | 'quote' | 'interval' | 'ending';
+  type: 'cover' | 'intro' | 'conversation' | 'long_conversation' | 'story' | 'single_image' | 'multi_image' | 'quote' | 'interval' | 'ending' | 'split_conversation';
   audio?: 'metro' | 'rain' | 'temple' | 'wind' | 'birds' | 'hospital' | 'keyboard' | 'night' | 'silence';
   audioVolume?: number;
   title?: string;

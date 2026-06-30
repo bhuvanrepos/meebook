@@ -376,7 +376,7 @@ export const WriterMode: React.FC = () => {
               onChange={(e) => updatePageField("type", e.target.value)}
               className="bg-stone-800 border border-stone-700 text-stone-100 text-xs py-1 px-2.5 rounded"
             >
-              {["cover", "intro", "conversation", "long_conversation", "story", "single_image", "multi_image", "quote", "interval", "ending"].map((t) => (
+              {["cover", "intro", "conversation", "long_conversation", "split_conversation", "story", "single_image", "multi_image", "quote", "interval", "ending"].map((t) => (
                 <option key={t} value={t}>{t.replace('_', ' ')}</option>
               ))}
             </select>
@@ -530,7 +530,7 @@ export const WriterMode: React.FC = () => {
             )}
 
             {/* C. CONVERSATIONS FIELDS */}
-            {(activePage.type === "conversation" || activePage.type === "long_conversation") && (
+            {(activePage.type === "conversation" || activePage.type === "long_conversation" || activePage.type === "split_conversation") && (
               <div className="space-y-4">
                 {activePage.type === "long_conversation" && (
                   <div className="flex flex-col gap-1.5 mb-2">
@@ -618,6 +618,20 @@ export const WriterMode: React.FC = () => {
                             className="writer-input bg-stone-800 border-stone-700 text-white text-xs py-1"
                             placeholder={dlg.thought ? "Enter inner thoughts (will be bracketed italics)" : "Enter speech..."}
                           />
+                          {activePage.type === "split_conversation" && (
+                            <div className="mt-2 flex flex-col gap-1">
+                              <span className="text-[9px] uppercase font-bold text-stone-500 flex items-center gap-1">
+                                <ImageIcon size={10} /> Dialogue Illustration Image Path
+                              </span>
+                              <input
+                                type="text"
+                                value={dlg.image || ""}
+                                onChange={(e) => updateDialogue(dIdx, "image", e.target.value)}
+                                className="writer-input bg-stone-800 border-stone-700 text-white text-[10px] py-0.5 font-mono"
+                                placeholder="e.g. /images/metro_window.png"
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
