@@ -226,28 +226,25 @@ interface SplitConversationProps {
   page: PageData;
   setLightboxImage: (src: string | null) => void;
   isStatic?: boolean;
+  activeIdx: number;
+  setActiveIdx: (idx: number) => void;
+  activeImage: string | undefined;
+  setActiveImage: (src: string | undefined) => void;
 }
 
-const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightboxImage, isStatic = false }) => {
-  const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
-  const [activeIdx, setActiveIdx] = useState<number>(0);
+const SplitConversation: React.FC<SplitConversationProps> = ({ 
+  page, 
+  setLightboxImage, 
+  isStatic = false,
+  activeIdx,
+  setActiveIdx,
+  activeImage,
+  setActiveImage
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Set default initial state on load
   useEffect(() => {
-    setActiveIdx(0);
-    if (page.dialogues && page.dialogues.length > 0) {
-      setActiveImage(page.dialogues[0].image || page.image);
-    } else {
-      setActiveImage(page.image);
-    }
-  }, [page.dialogues, page.image]);
-
-  useEffect(() => {
-    if (isStatic) {
-      setActiveImage(page.image);
-      return;
-    }
+    if (isStatic) return;
 
     const container = containerRef.current;
     if (!container) return;
@@ -281,7 +278,7 @@ const SplitConversation: React.FC<SplitConversationProps> = ({ page, setLightbox
     return () => {
       observer.disconnect();
     };
-  }, [page.dialogues, page.image, isStatic]);
+  }, [page.dialogues, page.image, isStatic, setActiveIdx, setActiveImage]);
 
   return (
     <div className="flex flex-row h-full w-full overflow-hidden select-text">
@@ -378,6 +375,85 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
 
   const activeChapter = novelData.chapters[currentChapterIndex];
   const isBookmarked = isPageBookmarked(activeChapter.id, page.id);
+
+  // Auto-play / active dialogue highlights
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
+  const longConvoRef = useRef<HTMLDivElement>(null);
+
+  // Reset activeIdx on page change
+  useEffect(() => {
+    setActiveIdx(0);
+    if (page.dialogues && page.dialogues.length > 0) {
+      setActiveImage(page.dialogues[0].image || page.image);
+    } else {
+      setActiveImage(page.image);
+    }
+  }, [page.id, page.dialogues, page.image]);
+
+  // Reading timer calculator based on word count
+  const calculateReadingDuration = (text: string): number => {
+    const wordsCount = text.split(/\s+/).filter(w => w.length > 0).length;
+    const duration = 2200 + wordsCount * 320;
+    return Math.min(8000, Math.max(2500, duration));
+  };
+
+  // Timer loop for auto-advance dialogue highlight
+  useEffect(() => {
+    const isConvo = page.type === "conversation" || 
+                    page.type === "long_conversation" || 
+                    page.type === "split_conversation_single" || 
+                    page.type === "split_conversation_multi";
+                    
+    if (!isConvo || !page.dialogues || page.dialogues.length === 0) return;
+    if (activeIdx >= page.dialogues.length - 1) return;
+
+    const currentText = page.dialogues[activeIdx].text;
+    const duration = calculateReadingDuration(currentText);
+
+    const timer = setTimeout(() => {
+      setActiveIdx((prev) => {
+        const nextIdx = Math.min(page.dialogues!.length - 1, prev + 1);
+        const nextImg = page.dialogues![nextIdx].image || page.image;
+        if (nextImg) {
+          setActiveImage(nextImg);
+        }
+        return nextIdx;
+      });
+    }, duration);
+
+    return () => clearTimeout(timer);
+  }, [activeIdx, page.id, page.dialogues, page.type, page.image]);
+
+  // IntersectionObserver for long_conversation page type scroll-sync
+  useEffect(() => {
+    if (page.type !== "long_conversation") return;
+    const container = longConvoRef.current;
+    if (!container) return;
+
+    const observerOptions = {
+      root: container,
+      rootMargin: "-30% 0px -45% 0px",
+      threshold: 0.1,
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idxStr = entry.target.getAttribute("data-index");
+          if (idxStr !== null) {
+            setActiveIdx(parseInt(idxStr, 10));
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    const rows = container.querySelectorAll("[data-dialogue-row]");
+    rows.forEach((row) => observer.observe(row));
+
+    return () => observer.disconnect();
+  }, [page.type, page.dialogues, page.id]);
 
   // Layouts
   return (
@@ -529,22 +605,30 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
         {page.type === "conversation" && (
           <div className="space-y-6 md:space-y-8 max-w-lg mx-auto w-full my-auto px-2">
             {page.dialogues && page.dialogues.map((dlg, idx) => {
-              const isBhairav = dlg.speaker.toLowerCase() === "bhairav";
+              const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
               const isIndu = dlg.speaker.toLowerCase() === "indu";
               
-              // Select matching colors for speakers for cinematic readability
               let nameColor = "text-[var(--foreground)]/80";
               if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
-              if (isIndu) nameColor = "text-amber-600 font-semibold";
+              if (isIndu) nameColor = "text-amber-650 font-semibold";
+              const isActive = idx === activeIdx;
 
               return (
-                <div key={idx} className="space-y-1.5 border-l border-[var(--border)]/20 pl-4 py-0.5 hover:border-[var(--accent)]/30 transition-colors">
+                <div 
+                  key={idx} 
+                  onClick={() => setActiveIdx(idx)}
+                  className={`space-y-1.5 pl-4 py-2 pr-2 scroll-mt-6 transition-all duration-350 cursor-pointer rounded-r-md select-text ${
+                    isActive 
+                      ? "border-l-2 border-[var(--accent)] bg-[var(--accent)]/5 opacity-100 shadow-sm" 
+                      : "border-l border-[var(--border)]/15 opacity-40 hover:opacity-75 hover:border-[var(--accent)]/30"
+                  }`}
+                >
                   <div className={`text-xs uppercase tracking-wider ${nameColor} font-sans`}>
                     {dlg.speaker}
                   </div>
                   <div className="text-[var(--font-size-dialogue)] font-lora leading-relaxed font-normal text-[var(--foreground)] text-[1.15rem]">
                     {dlg.thought ? (
-                      <span className="italic opacity-70 font-light">({dlg.text})</span>
+                      <span className="italic opacity-75 font-light">({dlg.text})</span>
                     ) : (
                       `"${dlg.text}"`
                     )}
@@ -563,22 +647,36 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
                 {page.title}
               </h3>
             )}
-            <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 py-2 select-text">
+            <div 
+              ref={longConvoRef}
+              className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6 py-2 select-text touch-pan-y"
+            >
               {page.dialogues && page.dialogues.map((dlg, idx) => {
-                const isBhairav = dlg.speaker.toLowerCase() === "bhairav";
+                const isBhairav = dlg.speaker.toLowerCase() === "bhairav" || dlg.speaker.toLowerCase() === "bhairava";
                 const isIndu = dlg.speaker.toLowerCase() === "indu";
                 let nameColor = "text-[var(--foreground)]/80";
                 if (isBhairav) nameColor = "text-[var(--accent)] font-semibold";
                 if (isIndu) nameColor = "text-amber-600 font-semibold";
+                const isActive = idx === activeIdx;
 
                 return (
-                  <div key={idx} className="space-y-1 border-l border-[var(--border)]/20 pl-4 py-0.5">
+                  <div 
+                    key={idx} 
+                    data-dialogue-row
+                    data-index={idx}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`space-y-1 pl-4 py-2 pr-2 scroll-mt-6 transition-all duration-350 cursor-pointer rounded-r-md select-text ${
+                      isActive 
+                        ? "border-l-2 border-[var(--accent)] bg-[var(--accent)]/5 opacity-100 shadow-sm" 
+                        : "border-l border-[var(--border)]/15 opacity-40 hover:opacity-75 hover:border-[var(--accent)]/30"
+                    }`}
+                  >
                     <div className={`text-xs uppercase tracking-wider ${nameColor} font-sans`}>
                       {dlg.speaker}
                     </div>
                     <div className="text-[var(--font-size-dialogue)] font-lora leading-relaxed text-[var(--foreground)] text-[1.125rem]">
                       {dlg.thought ? (
-                        <span className="italic opacity-70 font-light">({dlg.text})</span>
+                        <span className="italic opacity-75 font-light">({dlg.text})</span>
                       ) : (
                         `"${dlg.text}"`
                       )}
@@ -593,14 +691,30 @@ export const CardRenderer: React.FC<CardRendererProps> = ({ page }) => {
         {/* SPLIT SCREEN SCROLL-SYNC CONVERSATION PAGE */}
         {(page.type === "split_conversation" || page.type === "split_conversation_multi") && (
           <div className="flex-1 w-full h-full overflow-hidden my-auto py-2">
-            <SplitConversation page={page} setLightboxImage={setLightboxImage} isStatic={false} />
+            <SplitConversation 
+              page={page} 
+              setLightboxImage={setLightboxImage} 
+              isStatic={false} 
+              activeIdx={activeIdx}
+              setActiveIdx={setActiveIdx}
+              activeImage={activeImage}
+              setActiveImage={setActiveImage}
+            />
           </div>
         )}
 
         {/* SPLIT SCREEN STATIC CONVERSATION PAGE */}
         {page.type === "split_conversation_single" && (
           <div className="flex-1 w-full h-full overflow-hidden my-auto py-2">
-            <SplitConversation page={page} setLightboxImage={setLightboxImage} isStatic={true} />
+            <SplitConversation 
+              page={page} 
+              setLightboxImage={setLightboxImage} 
+              isStatic={true} 
+              activeIdx={activeIdx}
+              setActiveIdx={setActiveIdx}
+              activeImage={activeImage}
+              setActiveImage={setActiveImage}
+            />
           </div>
         )}
 
